@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OWASP Local and Session Storage</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+      integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+      integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div id="main-content" class="container-xl mt-5 flex-grow-1">
+      <div id="content-home" class="page">
+        <div class="text-center hero">
+          <h1 class="mb-4">Local and Session Storage showcase</h1>
+          <p class="lead" >
+            This is a sample application that demonstrates the differences
+            between Local and Session Storage </p>
+        </div>
+          <hr style="margin:20px">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg">
+                <h2> Local Storage </h2>
+                <ol>
+                  <li>Open the console in the Developer Tools of your browser</li>
+                  <li>Type the following to save an item in Local Storage
+                    <pre> localStorage.setItem('secret1', 'supersecret1')</pre>
+                  </li>
+                  <li>Type the following to retrieve the item from the Local Storage
+                    <pre> localStorage.getItem('secret1')</pre>
+                  </li>
+                  <li> Open http://localhost:3000 in a new tab and type the
+                    following. You will be able to retrieve the item from the
+                    Local Storage:
+                    <pre> localStorage.getItem('secret1')</pre>
+                  </li>
+                  <li> Close both tabs and re-open one. Type the following and
+                    observe that the item will still be retrieved verifying that
+                    data is persisted when the browser session ends.
+                    <pre> localStorage.getItem('secret1')</pre>
+                </ol>
+              </div>
+              <div class="col-lg">
+                <h2> Sessions Storage </h2>
+                <ol>
+                  <li>Open the console in the Developer Tools of your browser</li>
+                  <li>Type the following to save an item in Session Storage
+                    <pre> sessionStorage.setItem('secret2', 'supersecret2')</pre>
+                  </li>
+                  <li>Type the following to retrieve the item from the Session Storage
+                    <pre> sessionStorage.getItem('secret2')</pre>
+                  </li>
+                  <li> Open http://localhost:3000 in a new tab and type the
+                    following. The item will not be retrieved verifying that
+                    Session Storage is not shared between tabs.
+                    <pre> sessionStorage.getItem('secret2')</pre>
+                  </li>
+                  <li> Close both tabs and re-open one. Type the following and
+                    observe that the item will not be retrieved verifying that
+                    data is cleared when the browser session ends.
+                    <pre> sessionStorage.getItem('secret2')</pre>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  </body>
+</html>
